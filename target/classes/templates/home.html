@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Pemilihan Umum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #007bff;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            background: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin: 10px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aplikasi Pemilihan Umum</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#pemilih">Pemilih</a></li>
+            <li><a href="#petugas-kpu">Petugas KPU</a></li>
+            <li><a href="#calon-legislatif">Calon Anggota Legislatif</a></li>
+            <li><a href="#rekapitulasi">Rekapitulasi Hasil Pemilihan</a></li>
+        </ul>
+    </nav>
+
+    <section id="pemilih">
+        <h2>Pemilih</h2>
+        <form id="form-pemilih">
+            <label for="nama-pemilih">Nama Pemilih:</label>
+            <input type="text" id="nama-pemilih" required>
+
+            <label for="jenis-pemilihan">Pilih Jenis Pemilihan:</label>
+            <select id="jenis-pemilihan" required>
+                <option value="DPR">DPR</option>
+                <option value="DPRD Provinsi">DPRD Tingkat Provinsi</option>
+                <option value="DPRD Kabupaten/Kota">DPRD Tingkat Kabupaten/Kota</option>
+            </select>
+
+            <h3>Pilih Calon Anggota Legislatif:</h3>
+            <div id="calon-legislatif-list">
+                <!-- Daftar calon anggota legislatif akan ditampilkan di sini -->
+            </div>
+
+            <button type="submit">Suara</button>
+        </form>
+    </section>
+
+    <section id="petugas-kpu">
+        <h2>Petugas KPU</h2>
+        <form id="form-kpu">
+            <h3>Tambah / Ubah / Hapus Calon Anggota Legislatif</h3>
+            <label for="nama-calon">Nama Calon:</label>
+            <input type="text" id="nama-calon" required>
+
+            <label for="nama-partai">Nama Partai:</label>
+            <input type="text" id="nama-partai" required>
+
+            <label for="daerah-pemilihan">Daerah Pemilihan:</label>
+            <input type ="text" id="daerah-pemilihan" required>
+
+            <label for="visi-misi">Visi dan Misi:</label>
+            <textarea id="visi-misi" required></textarea>
+
+            <button type="submit">Simpan</button>
+            <button type="button" id="hapus-calon">Hapus</button>
+        </form>
+    </section>
+
+    <section id="rekapitulasi">
+        <h2>Rekapitulasi Hasil Pemilihan</h2>
+        <form id="form-rekapitulasi">
+            <label for="filter-partai">Filter berdasarkan Partai:</label>
+            <select id="filter-partai">
+                <option value="">Semua Partai</option>
+                <!-- Daftar partai akan ditambahkan di sini -->
+            </select>
+
+            <button type="submit">Tampilkan Rekapitulasi</button>
+        </form>
+
+        <div id="hasil-rekapitulasi">
+            <!-- Hasil rekapitulasi akan ditampilkan di sini -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Aplikasi Pemilihan Umum</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
